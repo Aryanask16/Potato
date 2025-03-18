@@ -5,7 +5,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
-    const url = "http://localhost:4002"
+    const url = "https://potato-backend-hc5i.onrender.com"
     const [token, setToken] = useState("")
     const [food_list, setFoodList] = useState([])
 
