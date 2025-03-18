@@ -8,7 +8,7 @@ import List from './pages/List/List'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
-  const url ='http://localhost:4002'
+  const url ='https://potato-backend-hc5i.onrender.com'
   return (
     <div>
       <ToastContainer/>
