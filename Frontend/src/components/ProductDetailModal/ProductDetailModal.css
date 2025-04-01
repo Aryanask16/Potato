@@ -1,0 +1,248 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+  }
+  
+  .modal-content {
+    background: white;
+    border-radius: 15px;
+    width: 95%;
+    max-width: 1000px;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal-image-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .modal-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  .thumbnail-container {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    justify-content: center;
+    background-color: #f9f9f9;
+  }
+  
+  .thumbnail {
+    width: 70px;
+    height: 70px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+  }
+  
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .active-thumbnail {
+    border-color: tomato;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: white;
+    color: #333;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+  }
+  
+  .modal-info {
+    padding: 25px;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #333;
+  }
+  
+  .modal-description {
+    color: #676767;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .modal-price {
+    color: tomato;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .modal-actions {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+  }
+  
+  .add-to-cart-btn {
+    background-color: tomato;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 180px;
+    justify-content: center;
+  }
+  
+  .add-to-cart-btn:hover {
+    background-color: #e53935;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .add-to-cart-btn img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Renamed from food-item-counter to cart-quantity-control for better semantics */
+  .cart-quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    width: 180px; /* Same width as add-to-cart-btn for consistency */
+    justify-content: center;
+  }
+  
+  .cart-quantity-control img {
+    width: 30px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .cart-quantity-control img:hover {
+    transform: scale(1.1);
+  }
+  
+  .cart-quantity-control p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    min-width: 30px;
+    text-align: center;
+  }
+  
+  .product-details-section {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+  }
+  
+  .product-details-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .product-details-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .product-details-section li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #555;
+  }
+  
+  /* Make it responsive for larger screens */
+  @media (min-width: 768px) {
+    .modal-content {
+      flex-direction: row;
+      max-height: 85vh;
+    }
+    
+    .modal-image-section {
+      flex: 1;
+      max-width: 50%;
+    }
+    
+    .modal-image {
+      height: 350px;
+      border-radius: 15px 0 0 0;
+    }
+    
+    .modal-info {
+      flex: 1;
+      overflow-y: auto;
+      padding: 30px;
+    }
+    
+    .thumbnail-container {
+      padding: 15px;
+    }
+  }
+  
+  /* For even larger screens */
+  @media (min-width: 1200px) {
+    .modal-image {
+      height: 400px;
+    }
+    
+    .thumbnail {
+      width: 85px;
+      height: 85px;
+    }
+  }
